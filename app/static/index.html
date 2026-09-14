@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BenefitLens | Member value intelligence</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <nav><div class="brand"><span class="mark">B</span> BenefitLens</div><span class="status"><i></i> Demo data</span></nav>
+    <header>
+      <div><p class="eyebrow">MEMBER VALUE INTELLIGENCE</p><h1>Make every card benefit<br><em>feel worth it.</em></h1><p class="sub">Find unused value, understand the moment, and give members a reason to engage.</p></div>
+      <div class="member-picker"><label for="member">Viewing member</label><select id="member"></select></div>
+    </header>
+    <section class="hero-grid">
+      <article class="value-card"><p>Unclaimed value</p><strong id="total">$0</strong><span id="fee-note">Across active benefits</span><div class="progress"><b id="value-bar"></b></div></article>
+      <article class="nudge-card"><p class="eyebrow">NEXT BEST NUDGE</p><h2 id="nudge-title">Loading insights…</h2><p id="nudge-message">We are matching recent activity with available card benefits.</p><div class="chips" id="signals"></div></article>
+    </section>
+    <section class="section-title"><div><p class="eyebrow">OPPORTUNITY QUEUE</p><h2>Benefits waiting to be used</h2></div><span id="count">0 benefits</span></section>
+    <section class="benefit-grid" id="benefits"></section>
+    <section class="action-panel"><div><p class="eyebrow">TRY THE ENGINE</p><h2>Record a new transaction</h2><p>Add a recent purchase to see how the recommendation changes. This is stored while the local server is running.</p></div><form id="transaction-form"><input id="merchant" required maxlength="80" placeholder="Merchant, e.g. DoorDash"><select id="category"><option value="dining">Dining</option><option value="airfare">Airfare</option><option value="electronics">Electronics</option><option value="home">Home</option><option value="other">Other</option></select><input id="amount" required type="number" min="1" step="0.01" placeholder="Amount"><button type="submit">Record transaction →</button><small id="form-status"></small></form></section>
+    <section class="how"><div><p class="eyebrow">EXPLAINABLE DECISIONS</p><h2>Why this nudge?</h2><p>Each recommendation combines remaining benefit value, expiry urgency and a recent behaviour signal. This keeps outreach useful rather than noisy.</p></div><div class="formula"><span>Available value</span><b>×</b><span>Member signal</span><b>×</b><span>Expiry urgency</span><strong>= ranked action</strong></div></section>
+  </main>
+  <template id="benefit-template"><article class="benefit"><div class="benefit-top"><span class="icon"></span><span class="urgency"></span></div><h3></h3><p class="description"></p><div class="money"><strong></strong><span>still available</span></div><div class="meter"><b></b></div><footer><span class="expiry"></span><button class="redeem">Mark redeemed <span>→</span></button></footer></article></template>
+  <script src="/static/app.js"></script>
+</body>
+</html>
